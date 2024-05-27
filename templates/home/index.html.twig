@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+{% if app.current_route == 'app_minPrice' %}
+<ul>
+    {% for booksminprice in booksminprices %}
+    <li>{{booksminprice.title}}|{{booksminprice.price}}</li>
+    {% endfor %}
+</ul>
+{% endif %}  
+{% if app.current_route == 'app_recentbook' %}
+<ul>
+    {% for recentbook in recentbooks %}
+    <li>{{recentbook.title}}|{{recentbook.price}}</li>
+    {% endfor %}
+</ul>
+{% endif %}  
+{% if app.current_route == 'app_bookbyTitle' %}
+<ul>
+    {% for bookbytitle in bookbytitles %}
+    <li>{{bookbytitle.title}}|{{bookbytitle.price}}</li>
+    {% endfor %}
+</ul>
+{% endif %}    
+{% endblock %}

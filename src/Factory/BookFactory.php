@@ -47,8 +47,8 @@ final class BookFactory extends ModelFactory
     protected function getDefaults(): array
     {
         return [
-            'author' => self::faker()->text(255),
-            'price' => self::faker()->randomFloat(),
+            'author' => self::faker()->name(5),
+            'price' => self::faker()->randomFloat(2,20,50),
             'publishedAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()),
             'title' => self::faker()->text(255),
         ];
